@@ -1,13 +1,138 @@
 en:
   activerecord:
     models:
+      author: Author
+      book: Book
+      card: Card
+      category: Category
+      comment: Comment
+      copy: Copy
+      notification: Notification
+      publisher: Publisher
+      registered_copy: Registered copy
       user: User
     attributes:
       user:
-        name: "Nickname"
+        name: "Nick name"
+        email: "Email"
         first_name: "First name"
         last_name: "Last name"
-        password_confirmation: "Retype password"
+        contact: "Contact"
+        password: "Mật khẩu"
+        password_confirmation: "Password confirmation"
+      book:
+        title: "Title"
+        price: "Price"
+        isbn: "ISBN"
+        publisher: "Publisher"
+        category: "Category"
+        summary: "Summary"
+      card:
+        issued_date: "Issued date"
+        expired_date: "Expiration date"
+        user: "User"
+        created_at: "Created at"
+
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :year
+    - :month
+    - :day
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
 
   base_title: "The Future Library"
   book: "Book"
@@ -37,9 +162,6 @@ en:
     _error_messages:
       error: "error"
       headf: "The form contains %{s}"
-    _stat:
-      following: "following"
-      follower: "followers"
 
   static_pages:
     home:
@@ -60,24 +182,20 @@ en:
       index: "All users"
     new:
       signup: "Sign up"
-      re-pas: "Retype password"
-      cr-acc: "Create account"
+      create_account: "Create account"
     create:
       message: "Check email to activate!"
     edit:
       edit: "Edit account"
       save: "Save"
     update:
-      updated: "Information is updated."
+      updated: "Information has been updated."
     destroy:
-      destroyed: "Account is deleted"
+      destroyed: "Account has been deleted"
     show:
-      micropost: "Microposts (%{s})"
-      wait: "Waiting for mail acpetion"
+      wait: "Waiting for mail registration"
       register: "Register card"
       card_information: "Card information"
-      issued_date: "Card issued date: "
-      expired_date: "Card expired date: "
     find_user:
       notfound: "No account found"
     logged_in_user:
@@ -105,7 +223,7 @@ en:
       invalid: "Invalid username or password"
     check_auth:
       message: "Account is not activated. \
-        Check email for link acitvate"
+        Check email for link activate"
 
   _header:
     login: "Login"
@@ -309,7 +427,7 @@ en:
 
   notifications:
     notification:
-      timestamp: "Posted %{time} ago."
+      timestamp: "%{time} ago."
       delete: "Delete"
       confirm: "Are you sure?"
     index:

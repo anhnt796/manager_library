@@ -34,10 +34,16 @@
                       <%= @book.authors.pluck(:name).to_sentence %>
                     <% end %>
                   </li>
-                  <br><li><%= t ".price" %>: <%= @book.price %></li>
-                  <br><li><%= t ".isbn" %>: <%= @book.isbn %></a></li>
-                  <br><li><%= t ".publisher" %>: <%= @book.publisher_name %></li>
-                  <br><li><%= t ".category" %>: <%= @book.category_name %></li>
+                  <br><li><%= Book.human_attribute_name :price %>:
+                    <%= @book.price %></li>
+                  <br><li><%= Book.human_attribute_name :isbn %>:
+                    <%= @book.isbn %></a></li>
+                  <br><li><%= Book.human_attribute_name :publisher %>:
+                    <%= @book.publisher_name %></li>
+                  <br><li><%= Book.human_attribute_name :category %>:
+                    <%= @book.category_name %></li>
+                  <br><li><%= Book.human_attribute_name :summary %>:
+                    <%= @book.summary %><br></li>
               </ul>
             </div>
           </div>

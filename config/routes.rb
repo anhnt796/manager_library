@@ -23,8 +23,9 @@ Rails.application.routes.draw do
   resources :users
   resources :books do
     resources :comments
+    resources :copies, only: %i(index new create update destroy)
   end
-  resources :copies, only: %i(index new create update destroy)
+  #resources :copies, only: %i(index new create update destroy)
   resources :card_activations, only: %i(edit)
   resources :password_resets, only: %i(new create edit update)
   resources :registered_copies, only: %i(index new create update destroy)

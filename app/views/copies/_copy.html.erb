@@ -7,7 +7,7 @@
   </div>
   <% if current_user.librarian? %>
     <div class="col-lg-9">
-      <%= link_to t(".delete"), copy, method: :delete,
+      <%= link_to t(".delete"), [@book, copy], method: :delete,
         data: {confirm: t(".confirm")} %>
     </div>
   <% end %>

@@ -1,18 +1,143 @@
 ja:
   activerecord:
     models:
+      author: 著者
+      book: 書籍
+      card: カード
+      category: カテゴリー
+      comment: コメント
+      copy: コピー
+      notification: お知らせ
+      publisher: 出版社
+      registered_copy: 登録されたコピー
       user: ユーザー
     attributes:
       user:
-        name: "Nickname"
-        first_name: "First name"
-        last_name: "Last name"
-        password_confirmation: "Retype password"
+        name: ニックネーム
+        email: eメール
+        first_name: 名前
+        last_name: 苗字
+        contact: お問い合わせ
+        password: パスワード
+        password_confirmation: パスワード確認
+      book:
+        title: 題名
+        price: 価格
+        isbn: 国際標準図書番号 (ISBN)
+        publisher: 出版社
+        category: カテゴリー
+        summary: 概要
+      card:
+        issued_date: 発行日
+        expired_date: 有効期限
+        user: ユーザー
+        created_at: 作成日
 
-  base_title: "The Future Library"
-  book: 本
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      almost_x_years:
+        one: 1年弱
+        other: "%{count}年弱"
+      half_a_minute: 30秒前後
+      less_than_x_minutes:
+        one: 1分以内
+        other: "%{count}分未満"
+      less_than_x_seconds:
+        one: 1秒以内
+        other: "%{count}秒未満"
+      over_x_years:
+        one: 1年以上
+        other: "%{count}年以上"
+      x_days:
+        one: 1日
+        other: "%{count}日"
+      x_minutes:
+        one: 1分
+        other: "%{count}分"
+      x_months:
+        one: 1ヶ月
+        other: "%{count}ヶ月"
+      x_years:
+        one: 1年
+        other: "%{count}年"
+      x_seconds:
+        one: 1秒
+        other: "%{count}秒"
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+
+  base_title: 未来図書館
+  book: 書籍
   please_login: ログインしてください
-  terms_of_service: "Last Updated: 2018-08-01\nThese terms of service \
+  terms_of_service: "最後の更新: 2018年08月01日\nThese terms of service \
     (\"Terms\") apply to your access and use of The Future Library \
     (the \"Service\"). Please read them carefully.\n\nAccepting these \
     Terms\nIf you access or use the Service, it means you agree to be bound \
@@ -36,64 +161,60 @@ ja:
       welcome_message: 未来図書館へようこそ！
     _error_messages:
       error: エラー
-      headf: "The form contains %{s}"
-    _stat:
-      following: "following"
-      follower: "followers"
+      headf: "フォーム%{s}つのエラーが含まれています"
 
   static_pages:
     home:
       page_title: ホームページ
     help:
-      page_title: "Help"
-      help_html: "To get help on this website, see the %{href}."
-      help_link: "tutorial here"
+      page_title: ヘルプ
+      help_html: このウェブサイトのヘルプを表示するには、%{href}を参照してください。"
+      help_link: こちらのチュートリアル
     about:
-      page_title: "About"
-      about_message: "We are Naitei Ruby from ACCESS Co. Ltd."
+      page_title: 私たちに関しては
+      about_message: 私たちは株式会社ACCESSのRuby内定です。
     contact:
-      page_title: "Contact"
-      contact_message: "Find us at Framgia Laboratory."
+      page_title: お問い合わせ
+      contact_message: フランジア研究所で私たちを見つける
 
   users:
     index:
-      index: "All users"
+      index: すべてのユーザー
     new:
-      signup: "Sign up"
-      re-pas: "Retype password"
-      cr-acc: "Create account"
+      signup: サインアップ
+      create_account: アカウントを作成する
     create:
-      message: "Check email to activate!"
+      message: "Eメールをチェックして有効にしてください"
     edit:
-      edit: "Edit account"
-      save: "Save"
+      edit: アカウントの編集
+      save: セーブ
     update:
-      updated: "Information is updated."
+      updated: 情報が更新されました。
     destroy:
-      destroyed: "Account is deleted"
+      destroyed: アカウントが削除されました。
     show:
-      micropost: "Microposts (%{s})"
-      wait: "Waiting for mail acpetion"
-      register: "Register"
+      wait: メール登録中
+      register: 登録する
+      card_information: カード情報
     find_user:
-      notfound: "No account found"
+      notfound: アカウントが見つかりません
     logged_in_user:
-      pleaselog: "Please log in!"
+      pleaselog: ログインしてください
     _user:
-      delete: "Delete"
-      sure: "Are you sure ?"
+      delete: 削除
+      sure: 本気ですか？
     require_card:
-      check_mail: "Check mail to activate card!"
+      check_mail: Eメールをチェックしてカードを有効にしてください
     register_card:
-      page_title: "The Future Library Terms of Service"
-      register: "Register card"
-      agree: "I agree to Terms of Service"
+      page_title: 未来図書館の利用規約
+      register: 登録する
+      agree: 私は利用規約に同意します
 
   sessions:
     new:
       login: ログイン
       newuser: 新しいユーザーですか?
-      signupnow: "Sign up now!"
+      signupnow: 今すぐサインアップ
       remember: このコンピュータで私を覚えている
       forgot_password: パスワード紛失
       sign_in_google: Googleでログイン
@@ -101,8 +222,8 @@ ja:
     create:
       invalid: ユーザー名かパスワードが無効
     check_auth:
-      message: "Account is not activated. \
-        Check email for link acitvate"
+      message: "アカウントは有効化されていません。 \
+        メールをチェックしてリンクをアクティブにする"
 
   _header:
     login: ログイン
@@ -293,8 +414,8 @@ ja:
 
   notifications:
     notification:
-      timestamp: "Posted %{time} ago."
-      delete: "Delete"
+      timestamp: "%{time}前"
+      delete: 削除
       confirm: 本気ですか？
     index:
       page_title: "Notifications"
@@ -322,7 +443,7 @@ ja:
       edit: "Edit"
       delete: "Delete"
       sure: "Are you sure?"
-      submitted: "Submitted %{s} ago."
+      submitted: "%{s}前に投稿されました."
     _edit_form:
       save: "Save"
 

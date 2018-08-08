@@ -1,18 +1,143 @@
 vi:
   activerecord:
     models:
-      user: User
+      author: "Tác giả"
+      book: "Sách"
+      card: "Thẻ"
+      category: "Danh mục"
+      comment: "Bình luận"
+      copy: "Bản sao"
+      notification: "Thông báo"
+      publisher: "Nhà xuất bản"
+      registered_copy: "Sách đã mượn"
+      user: "Người dùng"
     attributes:
       user:
-        name: "Nickname"
-        first_name: "First name"
-        last_name: "Last name"
+        name: "Tên người dùng"
+        email: "Email"
+        first_name: "Tên"
+        last_name: "Họ"
+        contact: "Liên hệ"
+        password: "Mật khẩu"
         password_confirmation: "Nhập lại mật khẩu"
+      book:
+        title: "Tiêu đề"
+        price: "Giá"
+        isbn: "ISBN"
+        publisher: "Nhà xuất bản"
+        category: "Danh mục"
+        summary: "Tóm tắt nội dung"
+      card:
+        issued_date: "Ngày cấp"
+        expired_date: "Ngày hết hạn"
+        user: "Người dùng"
+        created_at: "Cấp ngày"
+
+  date:
+    abbr_day_names:
+    - CN
+    - Thứ 2
+    - Thứ 3
+    - Thứ 4
+    - Thứ 5
+    - Thứ 6
+    - Thứ 7
+    abbr_month_names:
+    -
+    - Thg 1
+    - Thg 2
+    - Thg 3
+    - Thg 4
+    - Thg 5
+    - Thg 6
+    - Thg 7
+    - Thg 8
+    - Thg 9
+    - Thg 10
+    - Thg 11
+    - Thg 12
+    day_names:
+    - Chủ nhật
+    - Thứ hai
+    - Thứ ba
+    - Thứ tư
+    - Thứ năm
+    - Thứ sáu
+    - Thứ bảy
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"
+    month_names:
+    -
+    - Tháng một
+    - Tháng hai
+    - Tháng ba
+    - Tháng tư
+    - Tháng năm
+    - Tháng sáu
+    - Tháng bảy
+    - Tháng tám
+    - Tháng chín
+    - Tháng mười
+    - Tháng mười một
+    - Tháng mười hai
+    order:
+    - :day
+    - :month
+    - :year
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: khoảng 1 giờ
+        other: khoảng %{count} giờ
+      about_x_months:
+        one: khoảng 1 tháng
+        other: khoảng %{count} tháng
+      about_x_years:
+        one: khoảng 1 năm
+        other: khoảng %{count} năm
+      almost_x_years:
+        one: gần 1 năm
+        other: gần %{count} năm
+      half_a_minute: 30 giây
+      less_than_x_minutes:
+        one: chưa tới 1 phút
+        other: chưa tới %{count} phút
+      less_than_x_seconds:
+        one: chưa tới 1 giây
+        other: chưa tới %{count} giây
+      over_x_years:
+        one: hơn 1 năm
+        other: hơn %{count} năm
+      x_days:
+        one: 1 ngày
+        other: "%{count} ngày"
+      x_minutes:
+        one: 1 phút
+        other: "%{count} phút"
+      x_months:
+        one: 1 tháng
+        other: "%{count} tháng"
+      x_years:
+        one: 1 năm
+        other: "%{count} năm"
+      x_seconds:
+        one: 1 giây
+        other: "%{count} giây"
+    prompts:
+      day: Ngày
+      hour: Giờ
+      minute: Phút
+      month: Tháng
+      second: Giây
+      year: Năm
 
   base_title: "Thư viện Tương Lai"
   book: "Sách"
   please_login: "Vui lòng đăng nhập"
-  terms_of_service: "Last Updated: 2018-08-01\nThese terms of service \
+  terms_of_service: "Lần sửa đổi cuối: 2018-08-01\nThese terms of service \
     (\"Terms\") apply to your access and use of The Future Library \
     (the \"Service\"). Please read them carefully.\n\nAccepting these \
     Terms\nIf you access or use the Service, it means you agree to be bound \
@@ -37,9 +162,6 @@ vi:
     _error_messages:
       error: "lỗi"
       headf: "Biểu mẫu chứa %{s}"
-    _stat:
-      following: "following"
-      follower: "followers"
 
   static_pages:
     home:
@@ -60,8 +182,7 @@ vi:
       index: "Tất cả người dùng"
     new:
       signup: "Đăng ký"
-      re-pas: "Nhập lại mật khẩu"
-      cr-acc: "Tạo tài khoản"
+      create_account: "Tạo tài khoản"
     create:
       message: "Kiểm tra email để xác nhận!"
     edit:
@@ -72,9 +193,9 @@ vi:
     destroy:
       destroyed: "Tài khoản đã bị xóa"
     show:
-      micropost: "Microposts (%{s})"
       wait: "Đang chờ email xác nhận"
       register: "Đăng ký"
+      card_information: "Thông tin thẻ mượn"
     find_user:
       notfound: "Không có tài khoản nào được tìm thấy"
     logged_in_user:
@@ -295,7 +416,7 @@ vi:
 
   notifications:
     notification:
-      timestamp: "Posted %{time} ago."
+      timestamp: "%{time} trước."
       delete: "Delete"
       confirm: "Are you sure?"
     index:
@@ -324,7 +445,7 @@ vi:
       edit: "Edit"
       delete: "Delete"
       sure: "Are you sure?"
-      submitted: "Submitted %{s} ago."
+      submitted: "Đã đăng %{s} trước."
     _edit_form:
       save: "Save"
 

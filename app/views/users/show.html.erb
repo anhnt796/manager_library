@@ -9,10 +9,10 @@
       <% if @user.user? && current_user.current_user?(@user) %>
         <% if @user.card_activated? %>
           <h6><%= t ".card_information" %><h6><br>
-          <%= t ".issued_date" %>
-          <%= @user.card.issued_date %><br>
-          <%= t ".expired_date" %>
-          <%= @user.card.expired_date %>
+          <%= Card.human_attribute_name :issued_date %>:
+          <%= I18n.localize @user.card_issued_date %><br>
+          <%= Card.human_attribute_name :expired_date %>:
+          <%= I18n.localize @user.card_expired_date %>
         <% else %>
           <div class="register-card">
             <%= link_to t(".register"), register_path %>

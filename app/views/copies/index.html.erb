@@ -5,7 +5,7 @@
   <div class="add-new-book">
   <% if logged_in? && current_user.librarian? %>
     <div class="button-add-new-book">
-      <%= link_to t(".add_copy"), new_copy_path, class: "btn btn-primary" %>
+      <%= link_to t(".add_copy"), new_book_copy_path, class: "btn btn-primary" %>
     </div>
   <% end %>
   </div>
