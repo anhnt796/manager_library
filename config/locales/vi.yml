@@ -183,14 +183,24 @@ vi:
   users:
     index:
       index: "Tất cả người dùng"
+      sort_name: "Sắp xếp theo tên"
+      sort_price: "Sắp xếp theo ID"
     new:
       signup: "Đăng ký"
       create_account: "Tạo tài khoản"
     create:
       message: "Kiểm tra email để xác nhận!"
     edit:
-      edit: "Chỉnh sửa tài khoản"
+      edit: "Cài đặt tài khoản"
+      edit_info: "Chỉnh sửa thông tin"
       save: "Lưu"
+      back : "Back"
+      unhappy: "Unhappy?"
+      cancel: "Cancel my accout"
+      leave_blank: "(leave blank if you don't want to change it)"
+      need_current_password: "(we need your current password to confirm your changes)"
+      sure: "Are you sure?"
+      wait_confirmation: "Currently waiting confirmation for:"
     update:
       updated: "Thông tin đã được cập nhật."
     destroy:

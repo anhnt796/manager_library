@@ -45,7 +45,7 @@ class User < ApplicationRecord
         end
       end
     end
-    
+
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
                BCrypt::Engine::MIN_COST

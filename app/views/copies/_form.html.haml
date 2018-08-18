@@ -1,10 +1,17 @@
 = form_for [:book, @copy] do |f|
   = render "shared/error_messages", object: f.object
 
-  = f.label :book
-  = f.collection_select :book_id, @copy_support.books,
-    :id, :title, include_blank: false
-  = f.submit yield(:button_text), class: "btn btn-primary"
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.label :book
 
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.collection_select :book_id, @copy_support.books,
+        :id, :title, include_blank: false
+
+  = f.submit yield(:button_text), class: "btn btn-primary"
+  %br
   = t ".new_book_message"
+  %br
   = link_to t(".create_new_book"), new_book_path

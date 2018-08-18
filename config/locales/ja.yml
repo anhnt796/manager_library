@@ -183,14 +183,24 @@ ja:
   users:
     index:
       index: すべてのユーザー
+      sort_name: 名前で順に並べる
+      sort_price: IDで並べ替える
     new:
       signup: サインアップ
       create_account: アカウントを作成する
     create:
       message: "Eメールをチェックして有効にしてください"
     edit:
-      edit: アカウントの編集
+      edit: アカウント設定
+      edit_info: 情報を編集する
       save: セーブ
+      back : "Back"
+      unhappy: "Unhappy?"
+      cancel: "Cancel my accout"
+      leave_blank: "(leave blank if you don't want to change it)"
+      need_current_password: "(we need your current password to confirm your changes)"
+      sure: "Are you sure?"
+      wait_confirmation: "Currently waiting confirmation for:"
     update:
       updated: 情報が更新されました。
     destroy:

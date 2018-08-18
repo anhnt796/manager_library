@@ -183,6 +183,8 @@ en:
   users:
     index:
       index: "All users"
+      sort_name: "Sort by name"
+      sort_id: "Sort by ID"
     new:
       signup: "Sign up"
       create_account: "Create account"
@@ -192,7 +194,8 @@ en:
     create:
       message: "Check email to activate!"
     edit:
-      edit: "Edit account"
+      edit: "Account settings"
+      edit_info: "Edit information"
       save: "Save"
       back : "Back"
       unhappy: "Unhappy?"
@@ -250,6 +253,7 @@ en:
     comment_confirm: "Comments"
     book_confirm: "Books"
     notifications: "Notifications"
+    edit: "Edit"
 
   books:
     index:

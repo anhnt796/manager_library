@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_action :admin_user, only: %i(destroy)
 
   def index
-    @users = User.page(params[:page])
+    @search = User.search(params[:q])
+    @users = @search.result.page(params[:page])
   end
 
   def new
@@ -54,8 +55,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit :name, :email, :password,
-      :password_confirmation
+    params.require(:user).permit :name, :first_name, :last_name, :contact
   end
 
   def admin_user
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
       UserMailer.card_activation(user).deliver_now
       flash[:info] = t "users.require_card.check_mail"
     else
-      flash[:warning] = user.errors.full_messages.join
+      flash[:warning] = t "user.errors.full_messages.join"
     end
   end
 end

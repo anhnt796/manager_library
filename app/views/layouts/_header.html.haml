@@ -57,6 +57,7 @@
                   = image_tag Settings.IMAGE_ACCOUNT
               %ul.dropdown-nav.rh-drop-menu
                 %li= link_to t("_header.profile"), current_user
+                %li= link_to t("_header.edit"), edit_user_path(current_user)
                 %li= link_to t("_header.setting"), edit_user_registration_path
                 %li= link_to t("_header.logout"), destroy_user_session_path,
                   method: :delete
