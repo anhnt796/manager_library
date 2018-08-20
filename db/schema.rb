@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_041549) do
+ActiveRecord::Schema.define(version: 2018_08_17_081101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,7 +68,9 @@ ActiveRecord::Schema.define(version: 2018_08_17_041549) do
     t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["book_id"], name: "index_comments_on_book_id"
+    t.index ["deleted_at"], name: "index_comments_on_deleted_at"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -161,7 +163,9 @@ ActiveRecord::Schema.define(version: 2018_08_17_041549) do
     t.string "unlock_token"
     t.datetime "locked_at"
     t.string "slug"
+    t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

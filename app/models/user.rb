@@ -8,9 +8,11 @@ class User < ApplicationRecord
 
   enum role: {admin: 0, librarian: 1, user: 2}
 
+  acts_as_paranoid
+
   has_one :card, dependent: :destroy
-  has_many :comments
-  has_many :notifications
+  has_many :comments, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   scope :all_user, ->{select :id, :name, :email}
 

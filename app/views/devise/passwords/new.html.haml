@@ -1,25 +1,15 @@
 .limiter
   .container-login100
     %div(class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54")
-      %span(class="login100-form login100-form-title p-b-49")= t "users.new.signup"
+      %span(class="login100-form login100-form-title p-b-49") Forgot your password?
 
       .login100-form
-        = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+        = form_for resource, as: resource_name, url: password_path(resource_name), html: {method: :post} do |f|
           = devise_error_messages!
           %div(class="wrap-input100 m-b-23")
             %span.label-input100= f.label :email
             = f.email_field :email, autofocus: true, autocomplete: "email",
                class: "input100", placeholder: t("users.new.type_email")
-
-          %div(class="wrap-input100 m-b-23")
-            %span.label-input100= f.label :password
-            = f.password_field :password, autocomplete: "off",
-              class: "input100", placeholder:  t("users.new.type_password")
-
-          %div(class="wrap-input100 m-b-23")
-            %span.label-input100= f.label :password_confirmation
-            = f.password_field :password_confirmation, autocomplete: "off",
-              class: "input100", placeholder:  t("users.new.type_password")
 
           %br
           %br
@@ -27,8 +17,12 @@
             .wrap-login100-form-btn
               .login100-form-bgbtn
               = f.button :submit, class: "login100-form-btn" do
-                = I18n.t("users.new.signup")
+                = I18n.t("password_resets.new.send_reset_password")
 
           %div(class="flex-col-c p-t-155")
             - if controller_name != "sessions"
               = link_to t("sessions.new.login"), new_session_path(resource_name), class: "txt2"
+
+          %div(class="flex-col-c p-t-20")
+            - if devise_mapping.confirmable? && controller_name != "confirmations"
+              = link_to t(".new_confirmation"), new_confirmation_path(resource_name)

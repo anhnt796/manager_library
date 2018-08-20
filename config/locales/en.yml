@@ -394,6 +394,7 @@ en:
     new:
       submit: "Submit"
       forgot_password: "Forgot Password"
+      send_reset_password: "Send me reset password instructions"
     create:
       mess: "Email sent with password reset instructions"
       notfound: "Email address not found"
@@ -401,6 +402,9 @@ en:
       reset_password: "Reset password"
       confirm: "Confirmation"
       update_password: "Update password"
+      change_password: "Change your password"
+      confirm_new_password: "Confirm new password"
+      new_password: "New password"
     update:
       message: "Password has been reset."
     check_expiration:

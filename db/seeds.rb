@@ -1,4 +1,4 @@
-User.create!(name: "Admin",
+User.create!(name: "Admi  n",
   email: "admin@gmail.com",
   password: "111111",
   password_confirmation: "111111",

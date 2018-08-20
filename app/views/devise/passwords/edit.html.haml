@@ -1,0 +1,37 @@
+.limiter
+  .container-login100
+    %div(class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54")
+      %span(class="login100-form login100-form-title p-b-49")
+      = I18n.t("password_resets.edit.change_password")
+
+      .login100-form
+        = form_for resource, as: resource_name, |
+          url:  password_path(resource_name), |
+          html: {method: :put} do |f| |
+          = devise_error_messages!
+          = f.hidden_field :reset_password_token
+
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :password,
+              I18n.t("password_resets.edit.new_password")
+            %br
+            %i= t("users.edit.leave_blank")
+            = f.password_field :password, autocomplete: "off",
+              class: "input100"
+
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100= f.label :password_confirmation, 
+              I18n.t("password_resets.edit.confirm_new_password")
+            = f.password_field :password_confirmation, autocomplete: "off",
+              class: "input100"
+
+          %br
+          %br
+          .container-login100-form-btn
+            .wrap-login100-form-btn
+              .login100-form-bgbtn
+              = f.button :submit, class: "login100-form-btn" do
+                = I18n.t("password_resets.edit.change_password")
+
+          %div(class="flex-col-c p-t-20")
+            = link_to t("users.edit.back"), :back, class: "txt2"
