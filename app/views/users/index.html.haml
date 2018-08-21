@@ -6,5 +6,9 @@
       = paginate @users, theme: "twitter-bootstrap-4",
         pagination_class: "pagination-sm"
 
+  %br
+    .li= content_tag :th, sort_link(@search, :id, t(".sort_id"))
+    .li= content_tag :th, sort_link(@search, :name, t(".sort_name"))
+
   %ul.users
     = render @users

@@ -1,28 +1,33 @@
-= provide :title, t(".edit")
-%h1= t ".edit"
+= provide :title, t(".edit_info")
+.limiter
+  .container-login100
+    %div(class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54")
+      %span(class="login100-form login100-form-title p-b-49")= t ".edit_info"
 
-.row.justify-content-center
-  .col-md-6
-    = form_for @user do |f| 
-      = render "shared/error_messages", object: f.object
+      .row.justify-content-center
+        .col-md-6
+        = form_for @user do |f|
+          = render "shared/error_messages", object: f.object
 
-      = f.label :name 
-      = f.text_field :name, class: "form-control"
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100
+              = f.label :name
+              = f.text_field :name, class: "form-control"
 
-      = f.label :first_name
-      = f.text_field :first_name, class: "form-control"
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100
+              = f.label :first_name
+              = f.text_field :first_name, class: "form-control"
 
-      = f.label :last_name
-      = f.text_field :last_name, class: "form-control"
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100
+              = f.label :last_name
+              = f.text_field :last_name, class: "form-control"
 
-      = f.label :email
-      = f.email_field :email, class: "form-control"
+          %div(class="wrap-input100 m-b-23")
+            %span.label-input100
+              = f.label :contact
+              = f.text_field :contact, class: "form-control"
 
-      = f.label :password
-      = f.password_field :password, class: "form-control"
-
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation, class: "form-control"
-      
-      .button-submit-default
-        = f.submit t(".save"), class: "btn btn-primary"
+          .button-submit-default
+            = f.submit t(".save"), class: "btn btn-primary"

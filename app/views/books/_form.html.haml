@@ -1,22 +1,32 @@
 = form_for book do |f|
   = render "shared/error_messages", object: f.object
 
-  = f.label :title
-  = f.text_field :title, class: "form-control"
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.label :title
+      = f.text_field :title, class: "form-control"
 
-  = f.label :price
-  = f.text_field :price, class: "form-control"
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.label :price
+      = f.text_field :price, class: "form-control"
 
-  = f.label :isbn
-  = f.text_field :isbn, class: "form-control"
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.label :isbn
+      = f.text_field :isbn, class: "form-control"
 
-  = f.label :publisher
-  = f.collection_select :publisher_id, @book_support.publishers,
-    :id, :name, include_blank: false
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.label :publisher
+      = f.collection_select :publisher_id, @book_support.publishers,
+        :id, :name, include_blank: false
 
-  = f.label :category
-  = f.collection_select :category_id, @book_support.categories,
-    :id, :name, include_blank: false
+  %div(class="wrap-input100 m-b-23")
+    %span.label-input100
+      = f.label :category
+      = f.collection_select :category_id, @book_support.categories,
+        :id, :name, include_blank: false
 
   .button-submit-default
     = f.submit yield(:button_text), class: "btn btn-primary"
